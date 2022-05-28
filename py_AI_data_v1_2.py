@@ -30,8 +30,8 @@ def comment_pass(body, score):
 
 
 def text_format_db(text):
-    text = text.encode('utf-8')
     text = text.replace('\n', ' _back_to_line_ ').replace('\r', ' _back_to_line_ ').replace('"','*')
+    #text = text.encode('utf-8')
     return text
 
 
@@ -104,11 +104,11 @@ if __name__ == "__main__":
                 if parent:
                     no_parent_no_child = False
                     if parent[2] == None: #single parent
-                        collect_sql_commands("""UPDATE parent_reply SET parent_id = "{}", comment_id = "{}", parent = "{}", comment = "{}", subreddit = "{}", score = {} WHERE comment_id ="{}";""".format(parent_id, comment_id, parent[0].encode('utf-8'), body, subreddit, score, parent_id.split('_')[1]))
+                        collect_sql_commands("""UPDATE parent_reply SET parent_id = "{}", comment_id = "{}", parent = "{}", comment = "{}", subreddit = "{}", score = {} WHERE comment_id ="{}";""".format(parent_id, comment_id, parent[0], body, subreddit, score, parent_id.split('_')[1]))
                     elif parent[3] == parent_id.split('_')[1]:#parent with his parent
-                        collect_sql_commands("""INSERT INTO parent_reply (parent_id, comment_id, parent, comment, subreddit, score) VALUES ("t1_{}","{}","{}","{}","{}",{});""".format(parent[3], comment_id, parent[0].encode('utf-8'), body, subreddit, score))
+                        collect_sql_commands("""INSERT INTO parent_reply (parent_id, comment_id, parent, comment, subreddit, score) VALUES ("t1_{}","{}","{}","{}","{}",{});""".format(parent[3], comment_id, parent[0], body, subreddit, score))
                     elif score > parent[1]: #parent with child with lower score
-                        collect_sql_commands("""UPDATE parent_reply SET parent_id = "{}", comment_id = "{}", parent = "{}", comment = "{}", subreddit = "{}", score = {} WHERE parent_id ="{}";""".format(parent_id, comment_id, parent[2].encode('utf-8'), body, subreddit, score, parent_id))
+                        collect_sql_commands("""UPDATE parent_reply SET parent_id = "{}", comment_id = "{}", parent = "{}", comment = "{}", subreddit = "{}", score = {} WHERE parent_id ="{}";""".format(parent_id, comment_id, parent[2], body, subreddit, score, parent_id))
                 #if child:
                     #collect_sql_commands("""UPDATE parent_reply SET parent_id = "{}", comment_id = "{}", parent = "{}", comment = "{}", subreddit = "{}", score = {} WHERE parent_id ="t1_{}";""".format(comment_id, child[0], body, child[1].encode('utf-8'), subreddit, score, parent_id))
                     #no_parent_no_child = False
