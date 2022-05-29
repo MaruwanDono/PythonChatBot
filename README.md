@@ -1,6 +1,8 @@
 # PythonChatBot
 A chatbot made with python from reddit comments data (inspired by sentdex tutorial on youtube).
 
+Link to sentdex tutorial (for the 2 first scripts): https://www.youtube.com/watch?v=dvOnYLDg8_Y&list=PLQVvvaa0QuDdc2k5dwtDTyT9aCja0on8j
+
 Data sources : https://files.pushshift.io/reddit/comments/
 
 Scripts:
