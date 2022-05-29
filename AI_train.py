@@ -1,5 +1,5 @@
-#Inspired by sentdex tutorial on youtube
-#link: https://www.youtube.com/watch?v=dvOnYLDg8_Y&list=PLQVvvaa0QuDdc2k5dwtDTyT9aCja0on8j
+#Tutorial: https://www.youtube.com/watch?v=dvOnYLDg8_Y&list=PLQVvvaa0QuDdc2k5dwtDTyT9aCja0on8j
+#Data sources: https://files.pushshift.io/reddit/comments/
 import sqlite3
 import os
 
