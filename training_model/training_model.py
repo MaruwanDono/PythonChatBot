@@ -440,7 +440,7 @@ def accuracy(y_true, y_pred):
 
 
 ################################################
-################ Training model #################
+################ Launch Training ################
 ################################################
 
 #model.compile(optimizer=optimizer, loss=loss_function, metrics=[accuracy])
