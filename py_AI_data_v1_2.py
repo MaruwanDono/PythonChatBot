@@ -5,7 +5,7 @@ import json
 import os
 
 rootPath = os.getcwd()
-#The data file name, also the database name
+#The Data file name, also the database name
 d_name = 'RC_2017-12'
 date = d_name.split('_')[1]
 sql_commands = []
