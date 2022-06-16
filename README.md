@@ -7,7 +7,7 @@ Data sources : https://files.pushshift.io/reddit/comments/
 
 The training model script: https://blog.tensorflow.org/2019/05/transformer-chatbot-tutorial-with-tensorflow-2.html
 
-Scripts: <br />
+Scripts (in order of execution): <br />
 *py_AI_data_v1_2.py: Extract comments from data sources into pairs question/answer in a .db file <br />
 *AI_train.py: Organize pairs into text files and separte training data and testing data. <br />
 *training_model.py: Trains the model (options in script starting from line 443). <br />
